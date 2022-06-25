@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8" ?><!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeHandlers>
+        <typeHandler javaType="java.lang.Character" jdbcType="CHAR" handler="com.space.mapper.type.CharTypeHandler"/>
+    </typeHandlers>
+
+    <environments default="data">
+        <environment id="data">
+            <transactionManager type="JDBC"/>
+            <dataSource type="JNDI">
+                <property name="initial_context" value="java:comp/env"/>
+                <property name="data_source" value="jdbc/ssprod"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+    <mappers>
+        <mapper resource="com/space/mapper/CommonMapper.xml"/>
+        <mapper resource="com/space/mapper/documenti/GestioneDocumentiMapper.xml"/>
+        <mapper resource="com/space/mapper/documenti/GestioneDocumentiCertLinMapper.xml"/>
+        <mapper resource="com/space/mapper/documentiImma/GestioneDocumentiImmaMapper.xml"/>
+        <mapper resource="com/space/model/Csc.xml"/>
+        <mapper resource="com/space/model/CscTipoAmmissioni.xml"/>
+        <mapper resource="com/space/model/CscTipoCorso.xml"/>
+        <mapper resource="com/space/model/CorsoDiStudio.xml"/>
+        <mapper resource="com/space/model/Nazione.xml" />
+        <mapper resource="com/space/model/Istituto.xml"/>
+        <mapper resource="com/space/model/Maturita.xml"/>
+        <mapper resource="com/space/model/TitoloStudio.xml"/>
+        <mapper resource="com/space/model/TipoCorso.xml"/>
+
+
+        <!-- Autenticazione BO -->
+        <mapper resource="com/space/mapper/ssa/SsaMapper.xml"/>
+        <mapper resource="com/space/model/ssa/User.xml"/>
+        <mapper resource="com/space/model/ssa/SsaServizio.xml"/>
+        <!-- Fine autenticazione BO -->
+
+        <mapper resource="com/space/mapper/table/T15SediMapper.xml"/>
+        <mapper resource="com/space/model/table/T15Sedi.xml"/>
+        <mapper resource="com/space/mapper/table/T04NazioniMapper.xml"/>
+        <mapper resource="com/space/model/table/T04Nazioni.xml"/>
+        <mapper resource="com/space/model/table/CscLauree.xml"/>
+        <mapper resource="com/space/mapper/table/CscMapper.xml"/>
+        <mapper resource="com/space/model/table/ClasseMinisteriale.xml"/>
+        <mapper resource="com/space/model/table/CscClassi.xml"/>
+
+        <!--Test Aree Studio -->
+        <mapper resource="com/space/mapper/table/AreeStudioMapper.xml"/>
+        <mapper resource="com/space/model/table/AreeStudio.xml"/>
+
+        <!--Test CDL Link Corsi CTU -->
+        <mapper resource="com/space/mapper/table/LinkCorsiMapper.xml"/>
+        <mapper resource="com/space/model/table/LinkCorsi.xml"/>
+        <!--Aree segreterie -->
+        <mapper resource="com/space/model/AreaSegreterie.xml"/>
+
+
+        <!--Test corsi link diversi -->
+        <mapper resource="com/space/mapper/table/CorsiLinkDiversiMapper.xml"/>
+        <mapper resource="com/space/model/table/CorsiLinkDiversi.xml"/>
+
+
+        <!--Genera File CTU -->
+        <mapper resource="com/space/mapper/table/GeneraFileCTUMapper.xml"/>
+        <mapper resource="com/space/model/table/GeneraFileCTU.xml"/>
+
+        <!--Configurazioni OFA -->
+        <mapper resource="com/space/mapper/table/ConfigOFAMapper.xml"/>
+        <mapper resource="com/space/model/table/ConfigOFA.xml"/>
+
+        <!-- Gestione PARAMS -->
+        <mapper resource="com/space/mapper/params/GestioneParamsMapper.xml"/>
+        <mapper resource="com/space/model/params/ParamGestione.xml"/>
+        <mapper resource="com/space/model/params/StringPair.xml"/>
+        <!-- End Gestione PARAMS-->
+        <mapper resource="com/space/model/CorsoDiStudio.xml"/>
+
+        <!-- T40 comuni -->
+        <mapper resource="com/space/mapper/table/T40ComuniMapper.xml"/>
+        <mapper resource="com/space/model/table/T40Comune.xml"/>
+
+        <!-- T01 Tipologie formative -->
+        <mapper resource="com/space/mapper/table/T01TipologieMapper.xml"/>
+        <mapper resource="com/space/model/table/T01Tipologie.xml"/>
+
+        <!-- T02 istituti -->
+        <mapper resource="com/space/mapper/table/T02IstitutiMapper.xml"/>
+        <mapper resource="com/space/model/table/T02Istituti.xml"/>
+
+        <!-- T03 Universita -->
+        <mapper resource="com/space/mapper/table/T03UniversitaMapper.xml"/>
+        <mapper resource="com/space/model/table/T03Universita.xml"/>
+
+        <!-- T05 Province -->
+        <mapper resource="com/space/mapper/table/T05ProvinceMapper.xml"/>
+        <mapper resource="com/space/model/table/T05Province.xml"/>
+
+        <!-- T06 Titoli -->
+        <mapper resource="com/space/mapper/table/T06TitoliMapper.xml"/>
+        <mapper resource="com/space/model/table/T06Titoli.xml"/>
+
+        <!-- T15 Sedi -->
+        <mapper resource="com/space/mapper/table/T15SediMapper.xml"/>
+        <mapper resource="com/space/model/table/T15Sedi.xml"/>
+
+        <!-- T39 Gruppi tasse -->
+        <mapper resource="com/space/mapper/table/T39GruppiTasseMapper.xml"/>
+        <mapper resource="com/space/model/table/T39GruppiTasse.xml"/>
+
+        <mapper resource="com/space/mapper/table/T09TasseMapper.xml"/>
+        <mapper resource="com/space/model/table/T09Tasse.xml"/>
+
+        <!-- Configurazione Gestione Pagamenti -->
+        <mapper resource="com/space/mapper/gestpagamenti/GestPagamentiMapper.xml"/>
+        <mapper resource="com/space/model/gestpagamenti/Versamento.xml"/>
+        <mapper resource="com/space/model/gestpagamenti/Causale.xml"/>
+
+        <mapper resource="com/space/mapper/master2rata/Master2RataMapper.xml"/>
+        <mapper resource="com/space/model/master2rata/Master2Rata.xml"/>
+
+
+        <!-- certificati -->
+        <mapper resource="com/space/certificati/mapper/CertificatiMapper.xml"/>
+        <mapper resource="com/space/certificati/model/Certificato.xml"/>
+
+        <!-- Posizione -->
+        <mapper resource="com/space/mapper/posizione/PosizioneMapper.xml"/>
+        <mapper resource="com/space/model/Studente.xml"/>
+        <mapper resource="com/space/model/posizione/DocumentoStudente.xml"/>
+
+        <!-- SPPE -->
+        <mapper resource="com/space/mapper/sspe/SSPEMapper.xml"/>
+        <mapper resource="com/space/model/sspe/BorseSSPE.xml"/>
+
+        <!-- PrintExtractor -->
+        <mapper resource="com/space/dbprintextractor/persistence/mapper/CommonMapper.xml"/>
+        <mapper resource="com/space/dbprintextractor/persistence/mapper/SifaStampeMapper.xml"/>
+        <mapper resource="com/space/mapper/dbprintextractor/DbPrintExtractorMapper.xml"/>
+
+        <!-- Elenco immatricolati -->
+        <mapper resource="com/space/mapper/elencostudentiimmatricolati/ElencoStudentiImmatricolatiMapper.xml"/>
+        <mapper resource="com/space/model/elencostudentiimmatricolati/StudenteImmatricolato.xml"/>
+        <mapper resource="com/space/model/Facolta.xml"/>
+        <mapper resource="com/space/model/CorsoDiStudio.xml"/>
+        <mapper resource="com/space/model/TipoCorso.xml"/>
+        <mapper resource="com/space/model/Allegato.xml"/>
+
+
+        <!-- Elenco iscritti Certificazione Lingue -->
+        <mapper resource="com/space/mapper/elencoiscritticertlin/ElencoIscrittiCertLinMapper.xml"/>
+        <mapper resource="com/space/model/elencoiscritticertlin/StudenteIscrittoCertLin.xml"/>
+
+
+        <!-- Elenco Dmd Trasf -->
+        <mapper resource="com/space/mapper/elencodomandetrasferimento/ElencoDomandeTrasferimentoMapper.xml"/>
+        <mapper resource="com/space/model/elencodomandetrasferimento/EsameAutocertificato.xml"/>
+        <mapper resource="com/space/model/elencodomandetrasferimento/DomandaTrasferimento.xml"/>
+        <mapper resource="com/space/model/elencodomandetrasferimento/StoricoPianoStudi.xml"/>
+
+        <mapper resource="com/space/model/Universita.xml"/>
+        <!-- Acquisizione competenza lingua inglese -->
+        <mapper resource="com/space/mapper/acquisizionecompetenza/AcquisizioneCompetenzaIngleseMapper.xml" />
+        <!-- Competenza Lingue -->
+        <mapper resource="com/space/mapper/competenzalingua/CompetenzaLinguaMapper.xml" />
+        <mapper resource="com/space/model/competenzalingua/StudenteCompetenza.xml" />
+
+
+        <!-- Posizione, nuova transazione -->
+        <mapper resource="com/space/model/posizione/StudenteFotoRecord.xml" />
+        <mapper resource="com/space/model/posizione/Anagrafica.xml" />
+        <mapper resource="com/space/model/posizione/Candidato.xml" />
+        <mapper resource="com/space/model/posizione/DocumentoIdentita.xml" />
+        <mapper resource="com/space/model/posizione/DocumentoStudente.xml" />
+        <mapper resource="com/space/model/posizione/Comune.xml" />
+        <mapper resource="com/space/model/posizione/PosizioneStudente.xml" />
+        <mapper resource="com/space/model/posizione/TipoDocumentoIdentita.xml" />
+        <mapper resource="com/space/model/posizione/EsitoVerifica.xml" />
+        <mapper resource="com/space/model/posizione/Motivazione.xml" />
+
+        <!-- Cambio CDL -->
+        <mapper resource="com/space/mapper/cambiocdlstudente/CambioCDLStudenteMapper.xml" />
+
+        <mapper resource="com/space/mapper/lanciedestrazionisbarramenti/LanciEdEstrazioniMapper.xml"/>
+
+        <!-- Rata Suppletiva -->
+        <mapper resource="com/space/mapper/lanciedestrazionisuppletiva/LanciEdEstrazioniSuppletivaMapper.xml"/>
+
+        <!--Richiesta certificati -->
+        <mapper resource="com/space/mapper/richiestacertificati/RichiestaCertificatiMapper.xml"/>
+        <mapper resource="com/space/model/richiestacertificati/CategoriaCertificato.xml"/>
+        <mapper resource="com/space/model/richiestacertificati/CertificatoOLTP.xml"/>
+        <mapper resource="com/space/model/richiestacertificati/SsfmtcDto.xml"/>
+        <mapper resource="com/space/model/richiestacertificati/BufferBr1.xml"/>
+        <mapper resource="com/space/model/richiestacertificati/TtsCertificato.xml"/>
+
+        <!--Riconciliazione IUV -->
+
+        <mapper resource="com/space/mapper/riconciliazioneIUV/RiconciliazioneIUVMapper.xml"/>
+
+        <!-- Lanci per emissione prima rata -->
+        <mapper resource="com/space/mapper/lanciperemissioneprimarata/LanciPerEmissionePrimaRataMapper.xml"/>
+
+
+        <!-- Elenco GenerazioneMav -->
+        <mapper resource="com/space/mapper/generazionemav/GenerazioneMavMapper.xml"/>
+        <mapper resource="com/space/model/generazionemav/Studente.xml"/>
+        <mapper resource="com/space/model/generazionemav/FlussiRate.xml"/>
+        <mapper resource="com/space/model/generazionemav/Mav.xml"/>
+        <mapper resource="com/space/model/generazionemav/Causale.xml"/>
+
+        <!-- Elenco FlussiBanca -->
+        <mapper resource="com/space/mapper/gestioneflussibanca/GestioneFlussiBancaMapper.xml"/>
+        <mapper resource="com/space/model/gestioneflussibanca/FlussiBanca.xml"/>
+        <mapper resource="com/space/model/gestioneflussibanca/OperazioneErrata.xml"/>
+        <mapper resource="com/space/model/gestioneflussibanca/OperazioneElaborata.xml"/>
+
+        <!-- Disabili -->
+        <mapper resource="com/space/mapper/disabili/DisabiliMapper.xml"/>
+        <mapper resource="com/space/model/disabili/Disabile.xml"/>
+        <mapper resource="com/space/model/disabili/Matricola.xml"/>
+        <mapper resource="com/space/model/disabili/Documento.xml"/>
+        <mapper resource="com/space/model/disabili/TipoDocumento.xml"/>
+        <mapper resource="com/space/model/disabili/DomandaAmmissione.xml"/>
+        <mapper resource="com/space/model/disabili/SupportoDisabili.xml"/>
+        <mapper resource="com/space/model/disabili/Consensi.xml"/>
+
+        <!-- Part Time -->
+        <mapper resource="com/space/mapper/parttime/PartTimeMapper.xml"/>
+        <mapper resource="com/space/model/parttime/DomandaPartTime.xml"/>
+        <mapper resource="com/space/model/parttime/DatiStudente.xml"/>
+        <mapper resource="com/space/model/parttime/DatiRegime.xml"/>
+        <mapper resource="com/space/model/parttime/CDLPartTime.xml"/>
+        <mapper resource="com/space/model/parttime/Allegato.xml"/>
+        <mapper resource="com/space/model/Facolta.xml"/>
+        <mapper resource="com/space/model/CorsoDiStudio.xml"/>
+        <mapper resource="com/space/model/parttime/StudentePartTime.xml"/>
+        <mapper resource="com/space/model/parttime/LogAccessoPartTime.xml"/>
+        <mapper resource="com/space/model/parttime/ForzaturaDomanda.xml"/>
+
+        <!-- Borsa Ateneo -->
+        <mapper resource="com/space/mapper/borseateneo/BorseAteneoMapper.xml"/>
+        <mapper resource="com/space/model/borseateneo/BorsaAteneo.xml"/>
+        <mapper resource="com/space/model/borseateneo/DatiStudente.xml"/>
+
+        <!-- Cancellazione rateizzazione seconda rata -->
+        <mapper resource="com/space/mapper/cancellarateizzazione/CancellaRateizzazioneMapper.xml"/>
+        <mapper resource="com/space/model/Studente.xml"/>
+        <mapper resource="com/space/model/cancellarateizzazione/Rateizzazione.xml" />
+
+        <!-- transazione Generazione IUV -->
+        <mapper resource="com/space/mapper/generazioneIUV/GenerazioneIUVMapper.xml"/>
+        <mapper resource="com/space/model/generazioneIUV/Studente.xml"/>
+        <mapper resource="com/space/model/generazioneIUV/FlussiRate.xml"/>
+        <mapper resource="com/space/model/generazioneIUV/Causale.xml"/>
+        <mapper resource="com/space/model/generazioneIUV/Codvers.xml"/>
+
+        <!-- simulatore tasse -->
+        <mapper resource="com/space/mapper/simulatoretasse/SimulatoreTasseMapper.xml"/>
+        <mapper resource="com/space/model/simulatoretasse/CausaleSimulatoreTasse.xml"/>
+
+        <!-- ricalcolo tasse -->
+        <mapper resource="com/space/mapper/ricalcolotasse/RicalcoloTasseMapper.xml"/>
+
+        <mapper resource="com/space/mapper/ugov/UgovMapper.xml"/>
+        <mapper resource="com/space/model/ugov/AnagraficaExcelRow.xml"/>
+        <mapper resource="com/space/model/ugov/PagamentoUgovExcelRow.xml"/>
+        <mapper resource="com/space/model/ugov/PagamentoUlterioriInfo.xml"/>
+        <mapper resource="com/space/model/ugov/TipoPagamento.xml"/>
+        <mapper resource="com/space/model/ugov/Decreto.xml"/>
+
+        <!-- Ricerca errori pagamenti -->
+        <mapper resource="com/space/mapper/ricercaerroripagamenti/RicercaErroriPagamentiMapper.xml"/>
+        <mapper resource="com/space/model/ricercaerroripagamenti/ErrorePagamento.xml"/>
+        <mapper resource="com/space/model/ricercaerroripagamenti/DettaglioErrore.xml"/>
+
+        <!-- Ricerca modalitaPagamento -->
+        <mapper resource="com/space/model/modalitaPagamento/CdcTrack.xml"/>
+        <mapper resource="com/space/model/modalitaPagamento/ModalitaPagamento.xml"/>
+        <mapper resource="com/space/model/modalitaPagamento/PayStdMavOnline.xml"/>
+        <mapper resource="com/space/mapper/modalitaPagamento/ModalitaPagamentoMapper.xml"/>
+
+        <!-- Automatizzazione Shell -->
+        <mapper resource="com/space/model/shell/Eseguibile.xml"/>
+        <mapper resource="com/space/model/shell/Area.xml"/>
+        <mapper resource="com/space/model/shell/FileOut.xml"/>
+        <mapper resource="com/space/model/shell/Parametro.xml"/>
+        <mapper resource="com/space/mapper/shell/ShellMapper.xml"/>
+
+        <!-- jasperReport -->
+        <mapper resource="com/space/model/jasper/ReportConfig.xml"/>
+        <mapper resource="com/space/model/jasper/JasperArea.xml"/>
+        <mapper resource="com/space/mapper/jasper/JasperMapper.xml"/>
+        <mapper resource="com/space/mapper/parttime/LanciEdEstrazioniMapper.xml"/>
+
+        <!-- pagamenti esterni -->
+        <mapper resource="com/space/model/pagamentiEsterni/Debitore.xml"/>
+        <mapper resource="com/space/model/pagamentiEsterni/PagamentoEsterno.xml"/>
+        <mapper resource="com/space/mapper/pagamentiEsterni/PagamentiEsterniMapper.xml"/>
+
+        <!-- Documenti -->
+        <mapper resource="com/space/model/documenti/CscIndirizzo.xml"/>
+        <mapper resource="com/space/model/documenti/CscDocumenti.xml"/>
+        <mapper resource="com/space/model/documenti/CscDocumentiGroupTipo.xml"/>
+        <mapper resource="com/space/model/documenti/CscTipoDocumento.xml"/>
+        <mapper resource="com/space/model/documenti/AbilitazioniUpload.xml"/>
+        <!-- End Documenti -->
+
+        <!-- Documenti Immatricolazione -->
+
+        <mapper resource="com/space/model/documentiImma/CscDocImma.xml"/>
+        <mapper resource="com/space/model/documentiImma/CscDocumentiImmaGroupTipo.xml"/>
+
+        <!-- Bando -->
+        <mapper resource="com/space/mapper/bando/BandoMapper.xml"/>
+        <mapper resource="com/space/model/bando/Bando.xml"/>
+        <mapper resource="com/space/model/bando/AttivazioneImmatricolazioni.xml"/>
+        <mapper resource="com/space/model/bando/AttivazioneAmmissioni.xml"/>
+        <mapper resource="com/space/model/bando/Pagamenti.xml"/>
+        <mapper resource="com/space/model/bando/ProveAmmissione.xml"/>
+        <mapper resource="com/space/model/bando/ConfigurazioneImmatricolazione.xml"/>
+        <mapper resource="com/space/model/bando/ConfigurazioneAmmissione.xml"/>
+        <mapper resource="com/space/model/bando/PostiAmmessi.xml"/>
+        <mapper resource="com/space/model/bando/Statistica.xml"/>
+        <mapper resource="com/space/model/bando/PagamentoSceglibile.xml"/>
+        <mapper resource="com/space/model/bando/Scorrimento.xml"/>
+        <mapper resource="com/space/model/TipoCorso.xml"/>
+        <mapper resource="com/space/model/Facolta.xml"/>
+        <mapper resource="com/space/model/bando/CertificazioneLingue.xml"/>
+        <!-- End Bando -->
+
+        <!-- Domanda di Laurea -->
+        <mapper resource="com/space/mapper/laurea/SessioniLaureaMapper.xml"/>
+        <mapper resource="com/space/model/laurea/SessioneLaurea.xml"/>
+        <mapper resource="com/space/model/laurea/AppelloLaurea.xml"/>
+        <mapper resource="com/space/model/laurea/LaureaAbilitante.xml"/>
+        <mapper resource="com/space/mapper/laurea/LaureeAbilitantiMapper.xml"/>
+        <mapper resource="com/space/model/laurea/StudenteAbilitato.xml"/>
+        <!-- End Domanda di Laurea -->
+
+        <!-- Expo -->
+        <mapper resource="com/space/expo/mapper/TicketExpoMapper.xml"/>
+        <mapper resource="com/space/expo/model/TicketExpoPrenotazione.xml"/>
+        <mapper resource="com/space/expo/model/Studente.xml"/>
+        <mapper resource="com/space/expo/model/Segreteria.xml"/>
+        <mapper resource="com/space/expo/model/DataRitiro.xml"/>
+
+        <!-- Abilitazioni servizio docenti -->
+        <mapper resource="com/space/mapper/serviziodocenti/ServizioDocentiMapper.xml"/>
+        <mapper resource="com/space/model/serviziodocenti/AbilitazioneCorso.xml"/>
+        <mapper resource="com/space/model/serviziodocenti/UtenteServizioDocenti.xml"/>
+
+
+        <!-- Allegati bandi -->
+        <mapper resource="com/space/mapper/bando/AllegatiBandoMapper.xml"/>
+        <mapper resource="com/space/model/bando/AllegatoBando.xml"/>
+
+
+        <!-- Gestione Sedi Ammissione -->
+        <mapper resource="com/space/mapper/gestionesedi/GestioneSediMapper.xml"/>
+        <mapper resource="com/space/model/gestionesedi/SedeAmmissione.xml"/>
+        <mapper resource="com/space/model/gestionesedi/AssociazioneSede.xml"/>
+        <mapper resource="com/space/model/gestionesedi/AssociazioneSedeExport.xml"/>
+
+        <!-- Ricerca candidati -->
+        <mapper resource="com/space/mapper/ricercacandidato/RicercaCandidatoMapper.xml"/>
+        <mapper resource="com/space/model/ricercacandidato/Candidato.xml"/>
+
+        <!-- verifica abilitazione ugov -->
+        <mapper resource="com/space/mapper/verificaabilitazione/VerificaAbilitazioneMapper.xml"/>
+        <mapper resource="com/space/model/verificaabilitazione/UtenteCertificato.xml"/>
+        <mapper resource="com/space/model/verificaabilitazione/AssociazionePIVA.xml"/>
+        <mapper resource="com/space/model/verificaabilitazione/Comune.xml"/>
+
+        <mapper resource="com/space/mapper/questionari/QuestionariMapper.xml"/>
+        <mapper resource="com/space/model/questionari/Domanda.xml"/>
+        <mapper resource="com/space/model/questionari/Risposta.xml"/>
+        <mapper resource="com/space/model/questionari/RispostaAmmi.xml"/>
+        <mapper resource="com/space/model/questionari/RispostaImma.xml"/>
+
+        <!-- Dati CISIA -->
+        <mapper resource="com/space/model/datiCisia/DatiStudente.xml"/>
+        <mapper resource="com/space/model/datiCisia/CfiscCisiaResult.xml"/>
+        <mapper resource="com/space/mapper/datiCisia/DatiCisiaMapper.xml"/>
+
+        <!-- Acquisizione Ciclica Nuova -->
+        <mapper resource="com/space/mapper/testMmffnn/TestMFNMapper.xml"/>
+
+        <!-- Graduatorie Univ -->
+        <mapper resource="com/space/mapper/graduatorieUniversitaly/GraduatorieUniversitalyMapper.xml"/>
+
+        <mapper resource="com/space/mapper/inviomailammissione/InvioMailAmmissioneMapper.xml"/>
+        <mapper resource="com/space/model/inviomailammissione/AmmissioneStudente.xml"/>
+
+        <!-- jasperReport -->
+        <mapper resource="com/space/model/jasper/ReportConfig.xml"/>
+        <mapper resource="com/space/model/jasper/JasperArea.xml"/>
+        <mapper resource="com/space/mapper/jasper/JasperMapper.xml"/>
+
+        <!-- batch FOR24 -->
+        <mapper resource="com/space/mapper/batchFOR24/BatchFOR24Mapper.xml"/>
+        <mapper resource="com/space/model/batchFOR24/StudenteMinimal.xml"/>
+
+        <!-- Corsi singoli -->
+        <mapper resource="com/space/mapper/corsisingoli/CorsiSingoliMapper.xml"/>
+        <mapper resource="com/space/model/corsisingoli/InsegnamentoScelto.xml"/>
+        <mapper resource="com/space/model/corsisingoli/InsegnamentoInPiano.xml"/>
+        <mapper resource="com/space/model/corsisingoli/Insegnamento.xml"/>
+
+        <!-- Calcolo OFA -->
+        <mapper resource="com/space/mapper/calcoloOFA/CalcoloOFAMapper.xml"/>
+        <mapper resource="com/space/model/calcoloOFA/CalcoloOFA.xml"/>
+        <mapper resource="com/space/model/calcoloOFA/CorsoConImmatricolazione.xml"/>
+        <mapper resource="com/space/model/calcoloOFA/CorsoPrimoLivello.xml"/>
+        <mapper resource="com/space/model/calcoloOFA/PunteggioMinimoOfa.xml"/>
+        <mapper resource="com/space/model/calcoloOFA/TCLCorsoStudio.xml"/>
+        <mapper resource="com/space/model/calcoloOFA/CodiciTolc.xml"/>
+
+        <!-- Invio Comunicazione STD -->
+        <mapper resource="com/space/mapper/invioComunicazioneOFAStudenti/InvioComunicazioneOFAStudentiMapper.xml"/>
+        <mapper resource="com/space/model/invioComunicazioneOFAStudenti/StudenteConProvaOFA.xml"/>
+
+        <!-- Acquisizione ISEE -->
+        <mapper resource="com/space/mapper/acquisizioneIsee/AcquisizioneIseeMapper.xml"/>
+        <mapper resource="com/space/mapper/acquisizioneIsee/AcquisizioneIseeCommonMapper.xml"/>
+        <mapper resource="com/space/mapper/acquisizioneIsee/AttestazioniInpsMapper.xml"/>
+        <mapper resource="com/space/model/acquisizioneIsee/DichiarazioneIseeu.xml"/>
+
+        <!-- Diploma Supplement -->
+        <mapper resource="com/space/mapper/diplomaSupplement/TransazioneDiplomaSupplementMapper.xml"/>
+        <mapper resource="com/space/model/diplomaSupplements/DiplomaSupplement.xml"/>
+        <mapper resource="com/space/mapper/logDiplomaSupplement/TransazioneLogDiplomaSupplementMapper.xml"/>
+        <mapper resource="com/space/model/logDiplomaSupplements/LogDiplomaSupplement.xml"/>
+
+        <!-- Imposta Colonna Consolidamento -->
+        <mapper resource="com/space/mapper/impostacolonnaconsolidamento/TransazioneImpostaColonnaConsolidamentoMapper.xml"/>
+        <mapper resource="com/space/model/impostacolonnaconsolidamento/ImpostaColonnaConsolidamento.xml"/>
+
+        <!-- Reset valutazioni Docente/SLAM -->
+        <mapper resource="com/space/mapper/serviziodocenti/TransazioneResetValutazioniMapper.xml"/>
+        <mapper resource="com/space/model/serviziodocenti/ResetValutazioni.xml"/>
+        
+        <!-- Gestione poli -->
+        <mapper resource="com/space/mapper/table/PoliMapper.xml"/>
+        <mapper resource="com/space/model/table/Poli.xml"/>
+
+        <!-- Gestione Università consorziate -->
+        <mapper resource="com/space/mapper/table/UniversitaConsorziateMapper.xml"/>
+        <mapper resource="com/space/model/table/UniversitaConsorziate.xml"/>
+
+        <!-- Studenti Emissione certificato 4EU+ -->
+        <mapper resource="com/space/mapper/table/EmissioneCertificatoMapper.xml"/>
+        <mapper resource="com/space/model/table/StudenteCarriera.xml"/>
+
+        <!-- Inserimento Rinuncia / Fine carriera 4EU+ -->
+        <mapper resource="com/space/mapper/table/InserimentoRinunciaFineCarrieraMapper.xml"/>
+
+        <!-- Verifica Dati studenti -->
+        <mapper resource="com/space/mapper/table/VerificaDatiStudentiMapper.xml"/>
+        <mapper resource="com/space/model/table/StudenteVerificaDati.xml"/>
+        <mapper resource="com/space/model/table/DettStudenteVerificaDati.xml"/>
+        <mapper resource="com/space/model/table/Allegato.xml"/>
+
+        <!-- Lancio ed estrazioni causali 'CT' -->
+        <mapper resource="com/space/mapper/lancioestrazionicausalict/LanciEdEstrazioniCausaliCtMapper.xml"/>
+
+        <!-- Acquisizione Punteggi Test -->
+        <mapper resource="com/space/mapper/acquisizionePunteggiTest/AcquisizionePunteggiTestMapper.xml"/>
+        <mapper resource="com/space/model/acquisizionePunteggiTest/AcquisizionePunteggiTest.xml"/>
+
+        <!-- Coppie Lingue -->
+        <mapper resource="com/space/mapper/coppieLingue/CoppieLingueMapper.xml"/>
+        <mapper resource="com/space/model/coppieLingue/CoppiaLingua.xml"/>
+        <mapper resource="com/space/model/coppieLingue/Lingua.xml"/>
+
+        <!-- Corrispondenze Corsi -->
+        <mapper resource="com/space/mapper/corrCorsiPerAbb/CorrCorsiPerAbbMapper.xml"/>
+        <mapper resource="com/space/model/corrispondenzecorsiperabbreviazioni/Corrispondenza.xml"/>
+
+    </mappers>
+
+</configuration>

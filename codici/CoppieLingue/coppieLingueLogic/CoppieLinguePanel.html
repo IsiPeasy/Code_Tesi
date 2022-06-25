@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:wicket="http://wicket.apache.org">
+<body>
+<wicket:panel>
+    <div wicket:id="infoFeedback"/>
+<fieldset>
+    <legend>Ricerca</legend>
+    <table>
+        <tr>
+            <td>Anno accademico&nbsp;</td>
+            <td><input type="text" wicket:id="annoField" size="5" maxlength="4"/> </td>
+        </tr>
+        <tr>
+            <td>Codice corso&nbsp;</td>
+            <td><input type="text" wicket:id="cdcField" maxlength="3"/> </td>
+        </tr>
+
+    </table>
+</fieldset>
+    <div wicket:id="results">
+        <fieldset>
+            <legend>Risultati</legend>
+            <div class="elenco">
+                <table wicket:id="table" cellpadding="5" cellspacing="0">
+                    <tbody class="tbody_table"></tbody>
+                </table>
+            </div>
+        </fieldset>
+    </div>
+</wicket:panel>
+</body>
+</html>
